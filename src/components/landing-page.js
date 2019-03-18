@@ -10,14 +10,15 @@ export function LandingPage(props) {
   }
 
   return (
-    <div className="home">
+    <div className="landing-page">
       <h2>Welcome to Spanish App</h2>
-      <div className="app-preview">
-        <img alt="preivew of this page in action" src={require('../images/temp-app-preview.png')} />
+      <div className="landing-box">
+        <div className="app-preview">
+          <img alt="preivew of this page in action" src={require('../images/temp-app-preview.png')} />
+        </div>
+        <RegistrationPage />
       </div>
-      <RegistrationPage />
-      <Link to="/login">Login</Link>
-    </div>
+    </div >
   );
 }
 

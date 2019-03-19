@@ -5,8 +5,8 @@ body {
 }
 
 .app-preview > img {
-  max-height: 300px;
-  width: 100%
+  max-height: 600px;
+  width: 100%;
 }
 
 h2 {
@@ -27,7 +27,7 @@ h1 {
   flex-wrap: nowrap;
   justify-content: space-between;
   text-align: center;
-  width:100%;
+  width: 100%;
   height: 50px;
 }
 
@@ -35,7 +35,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 80%
+  width: 80%;
 }
 
 .landing-page > h2 {
@@ -48,7 +48,8 @@ h1 {
   display: flex;
 }
 
-.registration-home, .app-preview{
+.registration-home,
+.app-preview {
   flex: 1 0 50%;
   text-align: center;
   overflow: hidden;
@@ -74,11 +75,11 @@ h1 {
 
 .form-error {
   color: red;
-  font-size: .6em;
+  font-size: 0.6em;
 }
 
 .registration-home a {
-  font-size: .6em;
+  font-size: 0.6em;
 }
 
 .landing-page > h2 {

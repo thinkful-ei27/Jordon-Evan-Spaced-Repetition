@@ -12,11 +12,16 @@ export class Dashboard extends React.Component {
     return (
       <div className="dashboard">
         <div className="dashboard-username">
-          Username: {this.props.username}
-        </div>
-        <div className="dashboard-name">Name: {this.props.name}</div>
-        <div className="dashboard-protected-data">
-          Protected data: {this.props.protectedData}
+          <p>
+            ¡Hola{' '}
+            {this.props.name.split(' ')[0]
+              ? this.props.name.split(' ')[0]
+              : this.props.username}{' '}
+            listo para aprender algo de español!
+          </p>
+          <button onClick={() => this.props.history.push('/learn')}>
+            ¡Estoy listo!
+          </button>
         </div>
       </div>
     );

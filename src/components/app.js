@@ -8,6 +8,7 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import LoginForm from './login-form';
 import { refreshAuthToken } from '../actions/auth';
+import WordCard from '../components/WordCard';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -47,6 +48,7 @@ export class App extends React.Component {
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/login" component={LoginForm} />
+        <Route exact path="/learn" component={WordCard} />
       </div>
     );
   }

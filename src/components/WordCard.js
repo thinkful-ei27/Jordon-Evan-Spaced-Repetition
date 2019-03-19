@@ -15,7 +15,6 @@ function WordCard(props) {
   ) : (
     <p>quizás la próxima vez</p>
   );
-  console.log(props.userInput);
 
   //onSubmit check if answer is correct and display feedback accordingly
   // somehow switch button to go to the next question?

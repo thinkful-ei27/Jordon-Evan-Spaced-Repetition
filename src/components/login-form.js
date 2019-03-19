@@ -3,10 +3,12 @@ import { Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
 import { login } from '../actions/auth';
 import { required, nonEmpty } from '../validators';
+import { Link } from 'react-router-dom';
 
 export class LoginForm extends React.Component {
   onSubmit(values) {
-    return this.props.dispatch(login(values.username, values.password))
+    return this.props
+      .dispatch(login(values.username, values.password))
       .then(() => this.props.history.push('/dashboard'));
   }
 
@@ -22,9 +24,8 @@ export class LoginForm extends React.Component {
     return (
       <form
         className="login-form"
-        onSubmit={this.props.handleSubmit(values =>
-          this.onSubmit(values)
-        )}>
+        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+      >
         {error}
         <label htmlFor="username">Username</label>
         <Field
@@ -45,6 +46,7 @@ export class LoginForm extends React.Component {
         <button disabled={this.props.pristine || this.props.submitting}>
           Log in
         </button>
+        <Link to="/">Register</Link>
       </form>
     );
   }

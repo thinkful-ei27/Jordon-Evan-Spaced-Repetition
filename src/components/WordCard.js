@@ -4,9 +4,9 @@ import { Field, reduxForm } from 'redux-form';
 import { required } from '../validators';
 import { setUserInput } from '../actions/word-actions/getWords';
 import Input from './input';
+import requiresLogin from './requires-login';
 function WordCard(props) {
   const { handleSubmit } = props;
-  console.log(props.submitSucceeded);
   const checkAnswer = value => {
     return value.answerInput === props.words[0].answer;
   };
@@ -50,7 +50,7 @@ const mapStateToProps = state => ({
   userInput: state.words.userInput
 });
 
-WordCard = connect(mapStateToProps)(WordCard);
+WordCard = requiresLogin()(connect(mapStateToProps)(WordCard));
 export default reduxForm({
   form: 'submitAnswerForm'
 })(WordCard);

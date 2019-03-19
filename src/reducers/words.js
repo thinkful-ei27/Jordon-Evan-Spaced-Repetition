@@ -2,7 +2,7 @@ import { SET_USER_INPUT } from '../actions/word-actions/getWords';
 
 const initialState = {
   words: [
-    { word: 'hola', answer: 'hello' },
+    { word: 'hola', answer: 'hello', correctCount: 0, incorrectCount: 0 },
     { word: 'gracias', answer: 'thank you' }
   ],
   userInput: null,
@@ -24,4 +24,8 @@ export default function wordReducer(state = initialState, action) {
 //maybe set words to an object?
 // initialState = {
 //   words: [{word:'hola',answer: 'hello'}, {word:'gracias',answer: 'thank you'}]
+// }
+
+// {
+//   Words:  { word: 'hola', answer: 'hello', correctCount: 0, incorrectCount: 0, next: null}
 // }

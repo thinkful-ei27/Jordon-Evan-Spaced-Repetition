@@ -1,10 +1,12 @@
-import { SET_USER_INPUT } from '../actions/word-actions/getWords';
+import {
+  SET_USER_INPUT,
+  GET_WORDS_ERROR,
+  GET_WORDS_REQUEST,
+  GET_WORDS_SUCCESS
+} from '../actions/word-actions/getWords';
 
 const initialState = {
-  words: [
-    { word: 'hola', answer: 'hello', correctCount: 0, incorrectCount: 0 },
-    { word: 'gracias', answer: 'thank you' }
-  ],
+  words: [],
   userInput: null,
   error: null,
   loading: false
@@ -12,10 +14,25 @@ const initialState = {
 
 export default function wordReducer(state = initialState, action) {
   if (action.type === SET_USER_INPUT) {
-    // console.log(action.userInput);
     return {
       ...state,
       userInput: action.userInput
+    };
+  } else if (action.type === GET_WORDS_REQUEST) {
+    return {
+      ...state,
+      loading: true,
+      error: null
+    };
+  } else if (action.type === GET_WORDS_SUCCESS) {
+    return {
+      ...state,
+      words: action.words
+    };
+  } else if (action.type === GET_WORDS_ERROR) {
+    return {
+      ...state,
+      error: action.err
     };
   }
   return state;

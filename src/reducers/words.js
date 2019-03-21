@@ -45,7 +45,7 @@ export default function wordReducer(state = initialState, action) {
   } else if (action.type === POST_GUESS_REQUEST) {
     return {
       ...state,
-      loading: true,
+      loading: false,
       error: null
     };
   } else if (action.type === POST_GUESS_SUCCESS) {

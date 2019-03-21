@@ -6,7 +6,6 @@ import BarGraph from './Chart';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
-    console.log('component did mount');
     this.props.dispatch(getData());
   }
 

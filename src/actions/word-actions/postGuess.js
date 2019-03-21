@@ -20,7 +20,7 @@ export const postGuess = guess => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
 
   dispatch(postGuessRequest());
-  console.log(postGuessRequest());
+
   return fetch(`${API_BASE_URL}/words/guess`, {
     method: 'POST',
     body: JSON.stringify(guess),

@@ -45,6 +45,7 @@ export class Dashboard extends React.Component {
               : this.props.username}{' '}
             listo para aprender algo de español!
           </p>
+
           <button onClick={() => this.props.history.push('/learn')}>
             ¡Estoy listo!
           </button>

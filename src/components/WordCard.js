@@ -29,6 +29,7 @@ class WordCard extends Component {
     //   return word.word;
     // });
     // console.log(spanish);
+    console.log(words);
     const renderRightOrWrong =
       correctOrIncorrect.rightOrWrong === 'correct' ? (
         <p>¡PERFECTO!</p>
@@ -59,6 +60,11 @@ class WordCard extends Component {
             ref="guess"
             validate={[required]}
           />
+          <div>
+            <p>{`has conocido esta palabra ${words.correctCount} veces`}</p>
+            <p>{`respondiste esta palabra incorrectamente 
+            ${words.incorrectCount} veces`}</p>
+          </div>
           <div className="word-buttons">
             <button type="submit">envía tu respuesta</button>
             <button
@@ -66,7 +72,8 @@ class WordCard extends Component {
               onClick={value => {
                 dispatch(getWords(words));
               }}>
-              proxima palabra </button>
+              proxima palabra
+            </button>
           </div>
         </form>
         <div className="feedback">{renderRightOrWrong}</div>

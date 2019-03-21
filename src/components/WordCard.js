@@ -79,7 +79,7 @@ class WordCard extends Component {
                 dispatch(getWords(words));
               }}
             >
-              proxima palabra{' '}
+              proxima palabra
             </button>
           </div>
         </form>

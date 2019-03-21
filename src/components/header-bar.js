@@ -18,13 +18,14 @@ export class HeaderBar extends React.Component {
     }
     return (
       <header className="header-bar">
+        <div className="align-item" tabIndex="-1"></div>
         <h1>Spanish App</h1>
-
-        <Link className="button" to="/dashboard">
-          <button>Home</button>
-        </Link>
-
-        {logOutButton}
+        <div className="nav-buttons">
+          <Link className="button" to="/dashboard">
+            <button>Home</button>
+          </Link>
+          {logOutButton}
+        </div>
       </header>
     );
   }

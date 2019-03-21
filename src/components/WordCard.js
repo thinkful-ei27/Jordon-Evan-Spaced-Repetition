@@ -42,7 +42,7 @@ class WordCard extends Component {
           );
 
     return (
-      <div>
+      <div className="word-card">
         <header>{words.word}</header>
         <form
           onSubmit={handleSubmit(value => {
@@ -52,24 +52,24 @@ class WordCard extends Component {
           <div />
           <Field
             name="guess"
+            className="guess"
             component={Input}
             type="text"
             placeholder="tu respuesta"
             ref="guess"
             validate={[required]}
           />
-          <button type="submit">envía tu respuesta</button>
-          <button
-            type="reset"
-            onClick={value => {
-              dispatch(getWords(words));
-            }}
-          >
-            proxima palabra
-          </button>
+          <div className="word-buttons">
+            <button type="submit">envía tu respuesta</button>
+            <button
+              type="reset"
+              onClick={value => {
+                dispatch(getWords(words));
+              }}>
+              proxima palabra </button>
+          </div>
         </form>
-
-        <div>{renderRightOrWrong}</div>
+        <div className="feedback">{renderRightOrWrong}</div>
       </div>
     );
   }

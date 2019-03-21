@@ -10,20 +10,20 @@ export class Dashboard extends React.Component {
     this.props.dispatch(getData());
   }
 
-  dataList(props) {
-    const data = this.props.data.map((item, index) => (
-      <li key={index}>
-        Word: {item.word} || Correct answers: {item.correctCount} || Incorrect
-        Count: {item.incorrectCount}
-      </li>
-    ));
+  // dataList(props) {
+  //   const data = this.props.data.map((item, index) => (
+  //     <li key={index}>
+  //       Word: {item.word} || Correct answers: {item.correctCount} || Incorrect
+  //       Count: {item.incorrectCount}
+  //     </li>
+  //   ));
 
-    return (
-      <div className="data-list">
-        <ul>{data}</ul>
-      </div>
-    );
-  }
+  //   return (
+  //     <div className="data-list">
+  //       <ul>{data}</ul>
+  //     </div>
+  //   );
+  // }
 
   render() {
     return (
@@ -36,12 +36,12 @@ export class Dashboard extends React.Component {
               : this.props.username}{' '}
             listo para aprender algo de español!
           </p>
-          <BarGraph data={this.props.data} />
+          <BarGraph data={this.props.data} height={300} width={300} />
           <button onClick={() => this.props.history.push('/learn')}>
             ¡Estoy listo!
           </button>
         </div>
-        {this.dataList(this.props)}
+        {/* {this.dataList(this.props)} */}
       </div>
     );
   }

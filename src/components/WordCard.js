@@ -25,11 +25,6 @@ class WordCard extends Component {
       return <div className="loading">loading...</div>;
     }
     const { dispatch, handleSubmit, words, correctOrIncorrect } = this.props;
-    // const spanish = words.map(word => {
-    //   return word.word;
-    // });
-    // console.log(spanish);
-    console.log(words);
     const renderRightOrWrong =
       correctOrIncorrect.rightOrWrong === 'correct' ? (
         <p>¡PERFECTO!</p>
@@ -39,11 +34,11 @@ class WordCard extends Component {
           <p>{`la respuesta es ${correctOrIncorrect.answer}`}</p>
         </div>
       ) : (
-            <p>tú lo sabes</p>
-          );
+        <p>tú lo sabes</p>
+      );
 
     return (
-      <div>
+      <div className="word-card">
         <header>{words.word}</header>
         <form
           onSubmit={handleSubmit(value => {
@@ -53,6 +48,7 @@ class WordCard extends Component {
           <div />
           <Field
             name="guess"
+            className="guess"
             component={Input}
             type="text"
             placeholder="tu respuesta"
@@ -65,19 +61,19 @@ class WordCard extends Component {
               words.incorrectCount
             } veces`}</p>
           </div>
-
-          <button type="submit">envía tu respuesta</button>
-          <button
-            type="reset"
-            onClick={value => {
-              dispatch(getWords(words));
-            }}
-          >
-            proxima palabra
-          </button>
+          <div className="word-buttons">
+            <button type="submit">envía tu respuesta</button>
+            <button
+              type="reset"
+              onClick={value => {
+                dispatch(getWords(words));
+              }}
+            >
+              proxima palabra{' '}
+            </button>
+          </div>
         </form>
-
-        <div>{renderRightOrWrong}</div>
+        <div className="feedback">{renderRightOrWrong}</div>
       </div>
     );
   }

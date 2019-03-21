@@ -22,13 +22,14 @@ class BarGraph extends Component {
         'gato',
         'burro'
       ],
+
       datasets: [
         {
           label: 'Correct',
           fill: false,
           lineTension: 0.1,
-          backgroundColor: 'rgba(75,192,192,0.4)',
-          borderColor: 'rgba(75,192,192,1)',
+          backgroundColor: '#8D2B0B',
+          borderColor: '#8D2B0B',
           borderCapStyle: 'butt',
           pointBorderColor: 'rgba(75,192,192,1)',
           pointBackgroundColor: '#fff',
@@ -40,14 +41,14 @@ class BarGraph extends Component {
           pointRadius: 1,
           pointHitRadius: 10,
           data: correctCount,
-          easing: 'easeInCubic'
+          easing: 'linear'
         },
         {
           label: 'Incorrect',
           fill: false,
           lineTension: 0.1,
-          backgroundColor: '#EC932F',
-          borderColor: '#EC932F',
+          backgroundColor: '#CB6E17',
+          borderColor: '#B44D12',
           borderCapStyle: 'butt',
           borderDash: [],
           borderDashOffset: 0.0,

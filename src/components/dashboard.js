@@ -1,11 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import { fetchProtectedData } from '../actions/protected-data';
-import LineDemo from './Chart';
+import { getData } from '../actions/word-actions/wordsData';
+import BarGraph from './Chart';
 
 export class Dashboard extends React.Component {
-  componentDidMount() {}
+  componentDidMount() {
+    console.log('component did mount');
+    this.props.dispatch(getData());
+  }
+
+  dataList(props) {
+    const data = this.props.data.map((item, index) => (
+      <li key={index}>
+        Word: {item.word} || Correct answers: {item.correctCount} || Incorrect
+        Count: {item.incorrectCount}
+      </li>
+    ));
+
+    return (
+      <div className="data-list">
+        <ul>{data}</ul>
+      </div>
+    );
+  }
 
   render() {
     return (
@@ -18,11 +36,12 @@ export class Dashboard extends React.Component {
               : this.props.username}{' '}
             listo para aprender algo de español!
           </p>
-          <LineDemo />
+          <BarGraph data={this.props.data} />
           <button onClick={() => this.props.history.push('/learn')}>
             ¡Estoy listo!
           </button>
         </div>
+        {this.dataList(this.props)}
       </div>
     );
   }
@@ -30,10 +49,11 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
   const { currentUser } = state.auth;
+  const { data } = state.data;
   return {
     username: state.auth.currentUser.username,
     name: `${currentUser.firstName} ${currentUser.lastName}`,
-    protectedData: state.protectedData.data
+    data: data
   };
 };
 

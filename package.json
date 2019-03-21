@@ -6,8 +6,12 @@
     "react-scripts": "2.1.8"
   },
   "dependencies": {
+    "chart.js": "^1.1.1",
     "jwt-decode": "^2.2.0",
+    "moment": "^2.24.0",
     "react": "^16.8.4",
+    "react-chartjs": "^1.2.0",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.4.0",

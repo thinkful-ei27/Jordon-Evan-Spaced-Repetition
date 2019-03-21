@@ -2,13 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import { fetchProtectedData } from '../actions/protected-data';
-
+import BarGraph from './Chart';
 export class Dashboard extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchProtectedData());
   }
 
   render() {
+    console.log(BarGraph);
     return (
       <div className="dashboard">
         <div className="dashboard-username">
@@ -19,6 +20,8 @@ export class Dashboard extends React.Component {
               : this.props.username}{' '}
             listo para aprender algo de español!
           </p>
+
+          <BarGraph />
           <button onClick={() => this.props.history.push('/learn')}>
             ¡Estoy listo!
           </button>

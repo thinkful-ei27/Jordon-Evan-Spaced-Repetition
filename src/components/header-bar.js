@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
+import { Link } from 'react-router-dom';
 
 export class HeaderBar extends React.Component {
   logOut() {
@@ -16,10 +17,15 @@ export class HeaderBar extends React.Component {
       logOutButton = <button onClick={() => this.logOut()}>Log out</button>;
     }
     return (
-      <div className="header-bar">
+      <header className="header-bar">
         <h1>Spanish App</h1>
+
+        <Link className="button" to="/dashboard">
+          <button>Home</button>
+        </Link>
+
         {logOutButton}
-      </div>
+      </header>
     );
   }
 }

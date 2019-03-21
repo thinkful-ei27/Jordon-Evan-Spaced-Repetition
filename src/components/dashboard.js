@@ -1,14 +1,40 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import { fetchProtectedData } from '../actions/protected-data';
+import { getData } from '../actions/word-actions/wordsData';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchProtectedData());
+    console.log('component did mount')
+    this.props.dispatch(getData());
+  }
+
+  dataList(props) {
+    const data = this.props.data.map((item, index) => (
+      <li key={index}>
+        Word: {item.word} || Correct answers: {item.correctCount} || Incorrect Count: {item.incorrectCount}
+      </li>
+    ));
+
+    return (
+      <div className="data-list">
+        <ul>
+          {data}
+        </ul>
+      </div>
+    );
   }
 
   render() {
+    // const data = this.props.data.map(item => {
+    //   console.log(item)
+    //   // const dataObject = {
+    //   //   word: item.word,
+    //   //   correctCount: item.correctCount,
+    //   //   incorrectCount: item.incorrectCount
+    //   // };
+    // });
+    // console.log(data)
     return (
       <div className="dashboard">
         <div className="dashboard-username">
@@ -23,6 +49,7 @@ export class Dashboard extends React.Component {
             ¡Estoy listo!
           </button>
         </div>
+        {this.dataList(this.props)}
       </div>
     );
   }
@@ -30,10 +57,11 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
   const { currentUser } = state.auth;
+  const { data } = state.data;
   return {
     username: state.auth.currentUser.username,
     name: `${currentUser.firstName} ${currentUser.lastName}`,
-    protectedData: state.protectedData.data
+    data: data
   };
 };
 

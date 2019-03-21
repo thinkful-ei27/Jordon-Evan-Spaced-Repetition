@@ -38,8 +38,8 @@ class WordCard extends Component {
           <p>{`la respuesta es ${correctOrIncorrect.answer}`}</p>
         </div>
       ) : (
-        <p>tú lo sabes</p>
-      );
+            <p>tú lo sabes</p>
+          );
 
     return (
       <div>

@@ -2,11 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import { fetchProtectedData } from '../actions/protected-data';
+import LineDemo from './Chart';
 
 export class Dashboard extends React.Component {
-  componentDidMount() {
-    this.props.dispatch(fetchProtectedData());
-  }
+  componentDidMount() {}
 
   render() {
     return (
@@ -19,7 +18,7 @@ export class Dashboard extends React.Component {
               : this.props.username}{' '}
             listo para aprender algo de español!
           </p>
-
+          <LineDemo />
           <button onClick={() => this.props.history.push('/learn')}>
             ¡Estoy listo!
           </button>

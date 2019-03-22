@@ -72,16 +72,21 @@ class WordCard extends Component {
           />
           <div>{checkIfFirstTimeSeeing}</div>
           <div className="word-buttons submit">
-            <button type="submit">envía tu respuesta</button>
-            <button
-              type="reset"
-              onClick={value => {
-                this.props.reset();
-                dispatch(getWords(words));
-              }}
-            >
-              proxima palabra
-            </button>
+            {this.props.submitSucceeded ? (
+              <button
+                type="reset"
+                onClick={value => {
+                  this.props.reset();
+                  console.log(this.props.submitSucceeded);
+                  dispatch(getWords(words));
+                }}
+              >
+                {' '}
+                proxima palabra
+              </button>
+            ) : (
+              <button type="submit">envía tu respuesta</button>
+            )}
           </div>
         </form>
         <div className="feedback">{renderRightOrWrong}</div>

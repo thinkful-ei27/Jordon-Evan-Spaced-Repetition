@@ -24,26 +24,26 @@ export class RegistrationForm extends React.Component {
           this.onSubmit(values)
         )}>
         <Field component={Input}
-          aria-label="first name"
+          ariaLabel="first name"
           type="text"
           name="firstName"
           placeholder="First Name" />
         <Field component={Input}
           type="text"
-          aria-label="last name"
+          ariaLabel="last name"
           placeholder="Last Name"
           name="lastName" />
         <Field
           component={Input}
           type="text"
-          aria-label="username"
+          ariaLabel="username"
           name="username"
           placeholder="Username"
           validate={[required, nonEmpty, isTrimmed]}
         />
         <Field
           component={Input}
-          aria-label="password"
+          ariaLabel="password"
           type="password"
           name="password"
           placeholder="Password"
@@ -51,7 +51,7 @@ export class RegistrationForm extends React.Component {
         />
         <Field
           component={Input}
-          aria-label="confirm password"
+          ariaLabel="confirm password"
           type="password"
           name="passwordConfirm"
           placeholder="Confirm Password"

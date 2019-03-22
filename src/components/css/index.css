@@ -37,7 +37,7 @@ h2 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  vmax: 100;
+  vmin: 100;
 }
 
 

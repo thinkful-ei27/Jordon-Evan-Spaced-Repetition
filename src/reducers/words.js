@@ -26,7 +26,7 @@ export default function wordReducer(state = initialState, action) {
   } else if (action.type === GET_WORDS_REQUEST) {
     return {
       ...state,
-      loading: true,
+      loading: false,
       error: null
     };
   } else if (action.type === GET_WORDS_SUCCESS) {

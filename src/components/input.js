@@ -3,7 +3,7 @@ import React from 'react';
 export default class Input extends React.Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.meta.active && this.props.meta.active) {
-      this.input.focus();
+      // this.input.focus();
     }
   }
 
@@ -15,9 +15,7 @@ export default class Input extends React.Component {
 
     let warning;
     if (this.props.meta.touched && this.props.meta.warning) {
-      warning = (
-        <div className="form-warning">{this.props.meta.warning}</div>
-      );
+      warning = <div className="form-warning">{this.props.meta.warning}</div>;
     }
 
     return (

@@ -15,11 +15,11 @@ class WordCard extends Component {
   // checkAnswer = value => {
   //   return value.answerInput === this.props.words[0].answer;
   // };
-  checkAnswer = value => {
-    return this.props.words.find(word => value.answerInput === word.answer)
-      ? true
-      : false;
-  };
+  // checkAnswer = value => {
+  //   return this.props.words.find(word => value.answerInput === word.answer)
+  //     ? true
+  //     : false;
+  // };
   render() {
     if (this.props.loading) {
       return <div className="loading">loading...</div>;
@@ -57,7 +57,7 @@ class WordCard extends Component {
         <header>{words.word}</header>
         <form
           onSubmit={handleSubmit(value => {
-            dispatch(postGuess(value)).then(res => res.correctOrIncorrect);
+            return dispatch(postGuess(value));
           })}
         >
           <div />
@@ -76,8 +76,11 @@ class WordCard extends Component {
               <button
                 type="click"
                 onClick={value => {
-                  dispatch(getWords(words));
                   this.props.reset();
+                  dispatch(getWords(words)).then(() => {
+                    this.props.untouch('guess');
+                    console.log(this.props.submitSucceeded);
+                  });
                 }}
               >
                 {' '}
@@ -104,5 +107,8 @@ const mapStateToProps = state => ({
 
 WordCard = requiresLogin()(connect(mapStateToProps)(WordCard));
 export default reduxForm({
-  form: 'submitAnswerForm'
+  form: 'submitAnswerForm',
+  initialValues: {
+    guess: ''
+  }
 })(WordCard);

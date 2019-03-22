@@ -12,13 +12,20 @@ export function LandingPage(props) {
   return (
     <div className="landing-page">
       <h2>Welcome to Spanish App</h2>
+      <p className="app-desc">
+        Using this app will help you learn Spanish fast, with our top secret
+        spaced repetition algorithm!
+      </p>
       <div className="landing-box">
         <div className="app-preview">
-          <img alt="preivew of this page in action" src={require('../images/app-preview.png')} />
+          <img
+            alt="preivew of this page in action"
+            src={require('../images/app-preview.png')}
+          />
         </div>
         <RegistrationPage />
       </div>
-    </div >
+    </div>
   );
 }
 

@@ -34,23 +34,23 @@ class WordCard extends Component {
           <p>{`la respuesta es ${correctOrIncorrect.answer}`}</p>
         </div>
       ) : (
-            <p>tú lo sabes</p>
-          );
+        <p>¡tú lo sabes!</p>
+      );
 
     const checkIfFirstTimeSeeing =
       words.incorrectCount === 0 && words.correctCount === 0 ? (
         <p>This is the first time you have seen this word</p>
       ) : (
-          <div>
-            <p>
-              has conocido esta palabra <u>{`${words.correctCount}`}</u> veces
+        <div>
+          <p>
+            has conocido esta palabra <u>{`${words.correctCount}`}</u> veces
           </p>
-            <p>
-              respondiste esta palabra incorrectamente{' '}
-              <u>{`${words.incorrectCount}`}</u> veces
+          <p>
+            respondiste esta palabra incorrectamente{' '}
+            <u>{`${words.incorrectCount}`}</u> veces
           </p>
-          </div>
-        );
+        </div>
+      );
 
     return (
       <div className="word-card">
@@ -71,7 +71,7 @@ class WordCard extends Component {
             validate={[required]}
           />
           <div>{checkIfFirstTimeSeeing}</div>
-          <div className="word-buttons">
+          <div className="word-buttons submit">
             <button type="submit">envía tu respuesta</button>
             <button
               type="reset"

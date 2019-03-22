@@ -74,11 +74,10 @@ class WordCard extends Component {
           <div className="word-buttons submit">
             {this.props.submitSucceeded ? (
               <button
-                type="reset"
+                type="click"
                 onClick={value => {
-                  this.props.reset();
-                  console.log(this.props.submitSucceeded);
                   dispatch(getWords(words));
+                  this.props.reset();
                 }}
               >
                 {' '}

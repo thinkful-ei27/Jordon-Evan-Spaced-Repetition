@@ -14,7 +14,7 @@ export function LandingPage(props) {
       <h2>Welcome to Spanish App</h2>
       <div className="landing-box">
         <div className="app-preview">
-          <img alt="preivew of this page in action" src={require('../images/temp-app-preview.png')} />
+          <img alt="preivew of this page in action" src={require('../images/app-preview.png')} />
         </div>
         <RegistrationPage />
       </div>

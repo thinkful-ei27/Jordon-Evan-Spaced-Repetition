@@ -18,11 +18,11 @@ export class HeaderBar extends React.Component {
     }
     return (
       <header className="header-bar">
-        <div className="align-item" tabIndex="-1"></div>
+        {/* <div className="align-item" tabIndex="-1" /> */}
         <h1>Spanish App</h1>
         <div className="nav-buttons">
           <Link className="button" to="/dashboard">
-            <button>Home</button>
+            <button className="home">Home</button>
           </Link>
           {logOutButton}
         </div>

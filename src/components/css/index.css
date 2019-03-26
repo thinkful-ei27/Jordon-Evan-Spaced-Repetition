@@ -60,10 +60,6 @@ h1 {
     radial-gradient(farthest-corner at 0% 0%, #ba2525 70%, #610404 70%);
 }
 
-@media(max-width: 600px) {
-  .header-bar{ }
-}
-
 .nav-buttons,
 .align-item,
 header > h1 {
@@ -167,6 +163,10 @@ header > h1 {
   margin: 8px 0;
 }
 
+.login-form {
+  padding: 50px;
+}
+
 .form-error {
   color: red;
   margin-bottom: 3px;
@@ -193,3 +193,43 @@ input {
 /* .app-description {
   text-align: center;
 } */
+
+@media (max-width: 580px) {
+  /* .nav-buttons, */
+
+  header > h1 {
+    width: 30%;
+    font-size: 1.5em;
+    justify-self: center;
+
+    /* margin: 0 auto; */
+  }
+
+  /* .align-item {
+    width: auto;
+  } */
+
+  .nav-buttons {
+    margin-right: 15px;
+    display: flex;
+  }
+
+  .header-bar {
+    display: flex;
+    align-content: center;
+  }
+  .nav-buttons button,
+  .nav-buttons .home {
+    font-size: 0.6em;
+    width: 100%;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-buttons {
+    width: 37%;
+    font-size: 0.4em;
+    align-content: flex-end;
+  }
+}

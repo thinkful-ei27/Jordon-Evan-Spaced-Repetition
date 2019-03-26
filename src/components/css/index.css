@@ -53,12 +53,17 @@ h1 {
   text-align: center;
   width: 100vw;
   min-width: 100vw;
-  height: 80px;
+  height: 100px;
   padding: 0 20px;
   border-radius: 0 0 15px 15px;
   background: linear-gradient(110deg, #a61b1b 40%, rgba(0, 0, 0, 0) 30%),
     radial-gradient(farthest-corner at 0% 0%, #ba2525 70%, #610404 70%);
 }
+
+@media(max-width: 600px) {
+  .header-bar{ }
+}
+
 .nav-buttons,
 .align-item,
 header > h1 {

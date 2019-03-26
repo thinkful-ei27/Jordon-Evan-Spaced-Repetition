@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm, reset } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import { required } from '../validators';
-import { setUserInput } from '../actions/word-actions/getWords';
+
 import Input from './input';
 import { getWords } from '../actions/word-actions/getWords';
 import { postGuess } from '../actions/word-actions/postGuess';
@@ -30,7 +30,12 @@ class WordCard extends Component {
         <p>¡PERFECTO!</p>
       ) : correctOrIncorrect.rightOrWrong === 'incorrect' ? (
         <div>
-          <p>quizás la próxima 😕</p>
+          <p>
+            quizás la próxima{' '}
+            <span role="img" aria-label="accessible-emoji">
+              😕
+            </span>
+          </p>
           <p>{`la respuesta es ${correctOrIncorrect.answer}`}</p>
         </div>
       ) : (
@@ -76,10 +81,9 @@ class WordCard extends Component {
               <button
                 type="click"
                 onClick={value => {
-                  this.props.reset();
+                  this.props.reset('guess');
                   dispatch(getWords(words)).then(() => {
                     this.props.untouch('guess');
-                    console.log(this.props.submitSucceeded);
                   });
                 }}
               >

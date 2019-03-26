@@ -32,6 +32,7 @@ export default class Input extends React.Component {
           ref={input => (this.input = input)}
           placeholder={this.props.placeholder}
           aria-label={this.props.ariaLabel}
+          autoComplete={this.props.autoComplete}
         />
       </div>
     );

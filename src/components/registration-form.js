@@ -27,18 +27,21 @@ export class RegistrationForm extends React.Component {
           ariaLabel="first name"
           type="text"
           name="firstName"
-          placeholder="First Name" />
+          placeholder="First Name"
+          autoComplete="given-name" />
         <Field component={Input}
           type="text"
           ariaLabel="last name"
           placeholder="Last Name"
-          name="lastName" />
+          name="lastName"
+          autoComplete="family-name" />
         <Field
           component={Input}
           type="text"
           ariaLabel="username"
           name="username"
           placeholder="Username"
+          autoComplete="username"
           validate={[required, nonEmpty, isTrimmed]}
         />
         <Field
@@ -47,6 +50,7 @@ export class RegistrationForm extends React.Component {
           type="password"
           name="password"
           placeholder="Password"
+          autoComplete="new-password"
           validate={[required, passwordLength, isTrimmed]}
         />
         <Field
@@ -55,6 +59,7 @@ export class RegistrationForm extends React.Component {
           type="password"
           name="passwordConfirm"
           placeholder="Confirm Password"
+          autoComplete="new-password"
           validate={[required, nonEmpty, matchesPassword]}
         />
         <button

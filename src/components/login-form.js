@@ -30,6 +30,7 @@ export class LoginForm extends React.Component {
         <label htmlFor="username">Username</label>
         <Field
           ariaLabel="username"
+          autoComplete="username"
           component={Input}
           type="text"
           name="username"
@@ -38,6 +39,7 @@ export class LoginForm extends React.Component {
         />
         <label htmlFor="password">Password</label>
         <Field
+          autoComplete="current-password"
           ariaLabel="password"
           component={Input}
           type="password"

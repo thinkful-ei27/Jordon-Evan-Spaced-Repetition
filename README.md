@@ -8,6 +8,7 @@ the code for the back-end can be found at https://github.com/thinkful-ei27/Jorda
 
 #### Demo Login:
 username: testuser
+
 password: baseball123
 
 ## Tech Stack

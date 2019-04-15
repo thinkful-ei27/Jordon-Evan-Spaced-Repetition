@@ -1,16 +1,25 @@
-html {
-  min-height: 100%;
+html, body {
   height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-body {
+.app, body {
   margin: 0;
   padding: 0;
   font-family: 'Bree Serif', serif;
   font-size: 1.2em;
   background-image: linear-gradient(#f0b429, #fff3c4);
-  min-height: 100%;
+  width: 100%;
   height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .app-preview {
@@ -29,15 +38,12 @@ body {
   max-height: 75%;
 }
 
-h2 {
-  margin: 0;
+.login-link {
+  font-size: 18px;
 }
 
-.app {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  vmin: 100;
+h2 {
+  margin: 0;
 }
 
 h1 {
@@ -51,37 +57,42 @@ h1 {
   justify-content: space-between;
   align-content: center;
   text-align: center;
-  width: 100vw;
-  min-width: 100vw;
+  width: 100%;
+  min-width: 100%;
   height: 100px;
-  padding: 0 20px;
   border-radius: 0 0 15px 15px;
   background: linear-gradient(110deg, #a61b1b 40%, rgba(0, 0, 0, 0) 30%),
     radial-gradient(farthest-corner at 0% 0%, #ba2525 70%, #610404 70%);
 }
 
-.nav-buttons,
-.align-item,
-header > h1 {
-  width: 33%;
-}
-.nav-buttons button {
-  display: block;
-  float: right;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0 5px 0 5px;
+.footer {
+  color: white;
+  display: absolute;
+  bottom: 0;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+  min-width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  background: linear-gradient(110deg, #a61b1b 40%, rgba(0, 0, 0, 0) 30%),
+    radial-gradient(farthest-corner at 0% 0%, #ba2525 70%, #610404 70%);
 }
 
-/* .word-buttons button {
-  display: block;
-  float: center;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+.nav-buttons,
+header > h1 {
+  width: 50%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.nav-buttons button {
+  padding: 12px;
   margin: 0 5px 0 5px;
-} */
+  font-size: 1em;
+}
+
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -114,6 +125,7 @@ header > h1 {
   flex-wrap: wrap;
   justify-content: center;
   width: 80%;
+  max-width: 800px;
   text-align: center;
 }
 .landing-page > h2 {
@@ -121,7 +133,9 @@ header > h1 {
   justify-content: space-evenly;
   padding: 10px;
   width: 100%;
+  
   text-align: center;
+  
 }
 .landing-box {
   min-width: 100%;
@@ -153,6 +167,10 @@ header > h1 {
 }
 .registration-form .form-input {
   margin: 8px 0;
+}
+
+.registration-form {
+  margin-bottom: 10px;
 }
 
 .login-form input {
@@ -194,42 +212,64 @@ input {
   text-align: center;
 } */
 
-@media (max-width: 580px) {
-  /* .nav-buttons, */
-
-  header > h1 {
-    width: 30%;
-    font-size: 1.5em;
-    justify-self: center;
-
-    /* margin: 0 auto; */
+@media (max-width: 880px) {
+  .nav-buttons button,
+  .nav-buttons .home {
+    font-size: .7em;
+    padding: 10px;
   }
 
-  /* .align-item {
-    width: auto;
-  } */
+  header > h1 {
+    width: 40%;
+   font-size: 1em;
+ }
+}
+
+@media (max-width: 650px) {
+  html, body, .app {
+    height: 100%;
+    min-height: 100%;
+  }
+
+  header > h1 {
+     width: 40%;
+    font-size: 1em;
+    
+  }
+  .app-preview {
+    display: none;
+  }
 
   .nav-buttons {
-    margin-right: 15px;
     display: flex;
+    justify-items: right;
+    
   }
 
   .header-bar {
     display: flex;
     align-content: center;
+    justify-content: space-around;
   }
-  .nav-buttons button,
-  .nav-buttons .home {
-    font-size: 0.6em;
-    width: 100%;
-    align-self: flex-start;
+  
+  .landing-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app-desc {
+    font-size: .8em;
+  }
+
+  h2 {
+    font-size: 1.2em;
   }
 }
 
 @media (max-width: 420px) {
   .nav-buttons {
     width: 37%;
-    font-size: 0.4em;
+    font-size: 0.7em;
     align-content: flex-end;
   }
 }

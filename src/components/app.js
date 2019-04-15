@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Switch } from 'react-router-dom';
 
 import HeaderBar from './header-bar';
+import Footer from './footer';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
@@ -44,11 +45,13 @@ export class App extends React.Component {
     return (
       <div className="app">
         <HeaderBar />
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/register" component={RegistrationPage} />
-        <Route exact path="/login" component={LoginForm} />
-        <Route exact path="/learn" component={WordCard} />
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/register" component={RegistrationPage} />
+          <Route exact path="/login" component={LoginForm} />
+          <Route exact path="/learn" component={WordCard} />
+        </Switch>
       </div>
     );
   }

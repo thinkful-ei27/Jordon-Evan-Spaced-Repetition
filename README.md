@@ -5,6 +5,11 @@ This is the client side code for an app that teaches you Spanish vocabulary usin
 The live version of the app can be found at https://spaced-repition-client.herokuapp.com/
 the code for the back-end can be found at https://github.com/thinkful-ei27/Jordan-Evan-Spaced-Repetition-Backend
 
+
+#### Demo Login:
+username: testuser
+password: baseball123
+
 ## Tech Stack
 
 ### Back-End
@@ -21,8 +26,6 @@ the code for the back-end can be found at https://github.com/thinkful-ei27/Jorda
   - Redux-form
   - Normalize.css
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
 The Team:
-Evan Guirino
-Jordan Heffernan
+[Evan Guirino](https://github.com/etg624)
+[Jordan Heffernan](https://github.com/JordoHeffernan)

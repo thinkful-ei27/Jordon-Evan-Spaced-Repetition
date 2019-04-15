@@ -26,6 +26,6 @@ password: baseball123
   - Redux-form
   - Normalize.css
 
-The Team:
-[Evan Guirino](https://github.com/etg624)
+### The Team
+[Evan Guirino](https://github.com/etg624)  
 [Jordan Heffernan](https://github.com/JordoHeffernan)

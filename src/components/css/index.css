@@ -80,6 +80,10 @@ h1 {
     radial-gradient(farthest-corner at 0% 0%, #ba2525 70%, #610404 70%);
 }
 
+#listo {
+  font-size: 1.2em;
+}
+
 .nav-buttons,
 header > h1 {
   width: 50%;

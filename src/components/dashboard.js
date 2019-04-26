@@ -36,7 +36,7 @@ export class Dashboard extends React.Component {
             listo para aprender algo de español!
           </p>
           <BarGraph data={this.props.data} height={300} width={300} />
-          <button onClick={() => this.props.history.push('/learn')}>
+          <button id="listo" onClick={() => this.props.history.push('/learn')}>
             ¡Estoy listo!
           </button>
         </div>

@@ -26,6 +26,10 @@ password: baseball123
   - Redux-form
   - Normalize.css
 
+## Preview
+![Dashboard screenshot](/images/dashboard.png "Dashboard Screenshot")  
+![Guessing screenshot](/images/guess.png "Guessing Screenshot")  
+
 ### The Team
 [Evan Guirino](https://github.com/etg624)  
 [Jordan Heffernan](https://github.com/JordoHeffernan)

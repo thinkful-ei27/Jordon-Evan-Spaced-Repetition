@@ -27,8 +27,8 @@ password: baseball123
   - Normalize.css
 
 ## Preview
-<img alt="Dashboard screenshot" src="/images/dashboard.png" width="250px">  
-![Guessing screenshot](/images/guess.png "Guessing Screenshot")  
+<img alt="Dashboard screenshot" title="Dashboard Screenshot" src="/images/dashboard.png" width="360px">  
+<img alt="Guessing screenshot" title="Guessing Screenshot" src="/images/guess.png" width="360px">  
 
 ### The Team
 [Evan Guirino](https://github.com/etg624)  

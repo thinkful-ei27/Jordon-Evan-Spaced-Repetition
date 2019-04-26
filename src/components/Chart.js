@@ -68,10 +68,10 @@ class BarGraph extends Component {
     };
 
     return (
-      <div>
+      <section>
         <h2>Your Progress!</h2>
         <Bar ref="chart" data={data} />
-      </div>
+      </section>
     );
   }
 

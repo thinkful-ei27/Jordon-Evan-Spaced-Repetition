@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { required } from '../validators';
@@ -7,7 +7,8 @@ import Input from './input';
 import { getWords } from '../actions/word-actions/getWords';
 import { postGuess } from '../actions/word-actions/postGuess';
 import requiresLogin from './requires-login';
-class WordCard extends Component {
+
+class WordCard extends React.Component {
   componentDidMount() {
     this.props.dispatch(getWords(this.props.words));
   }
@@ -58,7 +59,7 @@ class WordCard extends Component {
         );
 
     return (
-      <div className="word-card">
+      <section className="word-card">
         <header>{words.word}</header>
         <form
           onSubmit={handleSubmit(value => {
@@ -97,7 +98,7 @@ class WordCard extends Component {
           </div>
         </form>
         <div className="feedback">{renderRightOrWrong}</div>
-      </div>
+      </section>
     );
   }
   //onSubmit check if answer is correct and display feedback accordingly
@@ -110,6 +111,7 @@ const mapStateToProps = state => ({
   loading: state.words.loading
 });
 
+// eslint-disable-next-line no-class-assign
 WordCard = requiresLogin()(connect(mapStateToProps)(WordCard));
 export default reduxForm({
   form: 'submitAnswerForm',

@@ -10,7 +10,7 @@ export function LandingPage(props) {
   }
 
   return (
-    <div className="landing-page">
+    <section className="landing-page">
       <h2>Welcome to Spanish App</h2>
       <p className="app-desc">
         Using this app will help you learn Spanish fast, with our top secret
@@ -25,7 +25,7 @@ export function LandingPage(props) {
         </div>
         <RegistrationPage />
       </div>
-    </div>
+    </section>
   );
 }
 

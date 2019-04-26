@@ -20,12 +20,12 @@ export class HeaderBar extends React.Component {
       <header className="header-bar">
         {/* <div className="align-item" tabIndex="-1" /> */}
         <h1>Repetición Espaciada</h1>
-        <div className="nav-buttons">
+        <nav className="nav-buttons">
           <Link className="button" to="/dashboard">
             <button className="home">Home</button>
           </Link>
           {logOutButton}
-        </div>
+        </nav>
       </header>
     );
   }

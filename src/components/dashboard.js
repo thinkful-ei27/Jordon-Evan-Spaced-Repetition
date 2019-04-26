@@ -26,7 +26,7 @@ export class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className="dashboard">
+      <section className="dashboard">
         <div className="dashboard-username">
           <p>
             ¡Hola{' '}
@@ -41,7 +41,7 @@ export class Dashboard extends React.Component {
           </button>
         </div>
         {/* {this.dataList(this.props)} */}
-      </div>
+      </section>
     );
   }
 }

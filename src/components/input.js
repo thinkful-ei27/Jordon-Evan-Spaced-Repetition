@@ -19,7 +19,7 @@ export default class Input extends React.Component {
     }
 
     return (
-      <div className="form-input">
+      <section className="form-input">
         <label htmlFor={this.props.input.name}>
           {this.props.label}
           {error}
@@ -34,7 +34,7 @@ export default class Input extends React.Component {
           aria-label={this.props.ariaLabel}
           autoComplete={this.props.autoComplete}
         />
-      </div>
+      </section>
     );
   }
 }
